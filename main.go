@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -67,11 +68,11 @@ func main() {
 	if PORT == "" {
 		PORT = "4000"
 	}
-	log.Fatal(app.Listen(":" + PORT))
-
+	
 	if os.Getenv("ENV") == "production" {
 		app.Static("/", "./client/dist")
 	}
+	log.Fatal(app.Listen(":" + PORT))
 }
 
 func getTodos(c *fiber.Ctx) error {

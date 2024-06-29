@@ -1,32 +1,33 @@
 import { Flex, Spinner, Stack, Text } from "@chakra-ui/react";
 import TodoItem from "./TodoItem";
 import { useQuery } from "@tanstack/react-query";
+import { BASE_URL } from "../App";
 
 export type Todo = {
-    _id: number;
-    body: string;
-    completed: boolean;
-    };
+  _id: number;
+  body: string;
+  completed: boolean;
+};
 
 const TodoList = () => {
-//   const [isLoading, setIsLoading]  = useState(false);
- const {data:todos, isLoading} = useQuery<Todo[]>({
+  //   const [isLoading, setIsLoading]  = useState(false);
+  const { data: todos, isLoading } = useQuery<Todo[]>({
     queryKey: ["todos"],
     queryFn: async () => {
-    //   setIsLoading(true);
-    try {
-      const response = await fetch("http://localhost:8000/api/todos");
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error || "Something went wrong!");
-      }
-      return data || [];
-    } catch (error) {
+      //   setIsLoading(true);
+      try {
+        const response = await fetch(BASE_URL + `/todos`);
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error || "Something went wrong!");
+        }
+        return data || [];
+      } catch (error) {
         console.error(error);
-    //   setIsLoading(false);
-    }
+        //   setIsLoading(false);
+      }
     },
- })
+  });
   return (
     <>
       <Text

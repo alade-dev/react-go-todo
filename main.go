@@ -7,7 +7,6 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -68,7 +67,7 @@ func main() {
 	if PORT == "" {
 		PORT = "4000"
 	}
-	
+
 	if os.Getenv("ENV") == "production" {
 		app.Static("/", "./client/dist")
 	}

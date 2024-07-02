@@ -61,7 +61,7 @@ This is a full-stack Todo application built with Go (Fiber) for the backend and 
 
 1. Start the backend server:
    ```
-  in the parent directory
+   In the parent directory
    go run main.go
    ```
 

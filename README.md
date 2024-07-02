@@ -1,6 +1,3 @@
-Certainly! I'll generate a README.md file based on the provided code. Here's a markdown-enabled README for your application:
-
-```markdown
 # Todo Application
 
 This is a full-stack Todo application built with Go (Fiber) for the backend and React for the frontend.
@@ -104,8 +101,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License.
-```
-
-This README provides an overview of your application, its features, tech stack, setup instructions, API endpoints, and deployment information. You can customize it further based on your specific needs or add more sections as required.
-
-Would you like me to explain or elaborate on any part of this README?
